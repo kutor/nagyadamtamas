@@ -5,6 +5,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "web",
         url: "http://leechermusic.com",
         src: "./portfolio_images/web_leechermusic.png",
+        linkDesc: "",
         id: 0
     },
     {
@@ -13,6 +14,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "video",
         url: "https://youtube.com/watch?v=55IwXRPpUVE",
         src: "https://youtube.com/embed/55IwXRPpUVE",
+        linkDesc: "",
         id: 1
     },
     {
@@ -21,6 +23,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "video",
         url: "https://youtube.com/watch?v=2zLOpB7_IJE",
         src: "https://youtube.com/embed/2zLOpB7_IJE",
+        linkDesc: "",
         id: 2
     },
     {
@@ -29,6 +32,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "./portfolio_images/leecher_sightless_booklet.pdf",
         src: "./portfolio_images/design_sightless.jpg",
+        linkDesc: "(PDF)",
         id: 3
     },
     {
@@ -37,6 +41,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "./portfolio_images/leecher_poster.jpg",
         src: "./portfolio_images/leecher_poster.jpg",
+        linkDesc: "(kép)",
         id: 4
     },
     {
@@ -45,6 +50,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "./portfolio_images/leecher_poster_tour.png",
         src: "./portfolio_images/leecher_poster_tour.png",
+        linkDesc: "(kép)",
         id: 5
     },
     {
@@ -53,6 +59,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "./portfolio_images/leecher_boardgame_mockup.png",
         src: "./portfolio_images/leecher_boardgame_mockup.png",
+        linkDesc: "(kép)",
         id: 6
     },
     {
@@ -61,6 +68,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "https://github.com/kutor/RPHA_DataLeecher_Python",
         src: "./portfolio_images/web_scraper.png",
+        linkDesc: "(GitHub)",
         id: 7
     },
     /*
@@ -70,6 +78,7 @@ const PORTFOLIO_ELEMENTS = [
         type: "image",
         url: "",
         src: "",
+        linkDesc: "",
         id: 
     },
     */
@@ -99,7 +108,7 @@ const createModals = (element) => {
     let add = 
     `<div id="modal_${element.id}" class="modal">
         <img src=${element.src} />
-        <a href=${element.url} target="_blank"><h2 class="download">>>> LINK <<<</h2></a>
+        <a href=${element.url} target="_blank"><h2 class="download">>>> LINK ${element.linkDesc} <<<</h2></a>
     </div>`
     document.getElementById("modals_hidden").innerHTML += add;
 }
