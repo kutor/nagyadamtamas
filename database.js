@@ -55,7 +55,7 @@ const PORTFOLIO_ELEMENTS = [
     },
     {
         title: "Leecher Társasjáték",
-        desc: "2019-ben nyomtatott prototípus",
+        desc: "látványterv",
         type: "image",
         url: "./portfolio_images/leecher_boardgame_mockup.png",
         src: "./portfolio_images/leecher_boardgame_mockup.png",
