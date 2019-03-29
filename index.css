@@ -97,7 +97,6 @@ article img, article iframe{
   opacity:80%;
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -114,6 +113,25 @@ article img, article iframe{
 }
 .modal img{
   height:80%;
-  padding: 20px;
-  background-color:white;
+  padding: 40px;
+  background-color:#333;
+}
+.download{
+  position:relative;
+  top:-65px;
+}
+img:hover{
+  cursor:pointer;
+}
+
+#section_contact{
+  text-align:center
+}
+
+
+@media only screen and (max-width: 1280px){
+  .content{
+    display:grid;
+    grid-template-columns: 0% 0% 100% 0%;
+  }
 }

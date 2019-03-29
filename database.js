@@ -35,7 +35,7 @@ const PORTFOLIO_ELEMENTS = [
         title: "Ps: Leecher poszter (2016)",
         desc: "a Sightless lemezhez",
         type: "image",
-        url: "",
+        url: "./portfolio_images/leecher_poster.jpg",
         src: "./portfolio_images/leecher_poster.jpg",
         id: 4
     },
@@ -43,7 +43,7 @@ const PORTFOLIO_ELEMENTS = [
         title: "Ps: Leecher poszter (2019)",
         desc: "a 2019 májusi turnéhoz",
         type: "image",
-        url: "",
+        url: "./portfolio_images/leecher_poster_tour.png",
         src: "./portfolio_images/leecher_poster_tour.png",
         id: 5
     },
@@ -64,13 +64,11 @@ const PORTFOLIO_ELEMENTS = [
 const createElements = (element) => {
     document.getElementById("articles_container").innerHTML += 
     `<article> 
-        <a href=${element.url} target="_blank" rel="noopener noreferrer">
-            ${element.type == "video" ? 
-                `<iframe src=${element.src} frameborder="0" class="iframe_youtube"></iframe>`
-                : `<img src=${element.src} alt=${element.title} id="element_${element.id}" class="element"/>`}
-            <h3>${element.title}</h3>
-            ${element.desc}
-        </a>
+        ${element.type == "video" ? 
+            `<iframe src=${element.src} frameborder="0" class="iframe_youtube"></iframe>`
+            : `<img src=${element.src} alt=${element.title} id="element_${element.id}" class="element"/>`}
+        <h3>${element.title}</h3>
+        ${element.desc}
     </article>`
 }
 PORTFOLIO_ELEMENTS.map(createElements);
@@ -82,6 +80,7 @@ const createModals = (element) => {
     let add = 
     `<div id="modal_${element.id}" class="modal">
         <img src=${element.src} />
+        <a href=${element.url} target="_blank"><h2 class="download">>>> letöltés <<<</h2></a>
     </div>`
     document.getElementById("modals_hidden").innerHTML += add;
 }
