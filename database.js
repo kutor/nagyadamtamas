@@ -2,7 +2,7 @@ const PORTFOLIO_ELEMENTS = [
     {
         title: "Web: Leecher zenekar honlapja (2019)",
         desc: "HTML / CSS / JS / React",
-        isVideo : false,
+        type: "web",
         url: "http://leechermusic.com",
         src: "./portfolio_images/web_leechermusic.png",
         id: 0
@@ -17,7 +17,7 @@ const PORTFOLIO_ELEMENTS = [
     },
     {
         title: "Video: All the Stars (2016)",
-        desc: "szöveges videó",
+        desc: "szöveges videó + dalszöveg",
         type: "video",
         url: "https://youtube.com/watch?v=2zLOpB7_IJE",
         src: "https://youtube.com/embed/2zLOpB7_IJE",
@@ -47,13 +47,30 @@ const PORTFOLIO_ELEMENTS = [
         src: "./portfolio_images/leecher_poster_tour.png",
         id: 5
     },
+    {
+        title: "Leecher Társasjáték",
+        desc: "2019-ben nyomtatott prototípus",
+        type: "image",
+        url: "./portfolio_images/leecher_boardgame_mockup.png",
+        src: "./portfolio_images/leecher_boardgame_mockup.png",
+        id: 6
+    },
+    {
+        title: "Python Webscraper",
+        desc: "két havi munka megspórolva négy nap alatt",
+        type: "image",
+        url: "https://github.com/kutor/RPHA_DataLeecher_Python",
+        src: "./portfolio_images/web_scraper.png",
+        id: 7
+    },
     /*
     {
         title: "",
         desc: "",
-        isVideo: false,
+        type: "image",
         url: "",
-        src: ""
+        src: "",
+        id: 
     },
     */
 ]
@@ -66,7 +83,9 @@ const createElements = (element) => {
     `<article> 
         ${element.type == "video" ? 
             `<iframe src=${element.src} frameborder="0" class="iframe_youtube"></iframe>`
-            : `<img src=${element.src} alt=${element.title} id="element_${element.id}" class="element"/>`}
+            : element.type == "image" ?
+                `<img src=${element.src} alt=${element.title} id="element_${element.id}" class="element"/>`
+                : `<a href=${element.url}><img src=${element.src} alt=${element.title} id="element_${element.id}" class="element"/></a>`}
         <h3>${element.title}</h3>
         ${element.desc}
     </article>`
@@ -80,7 +99,7 @@ const createModals = (element) => {
     let add = 
     `<div id="modal_${element.id}" class="modal">
         <img src=${element.src} />
-        <a href=${element.url} target="_blank"><h2 class="download">>>> letöltés <<<</h2></a>
+        <a href=${element.url} target="_blank"><h2 class="download">>>> LINK <<<</h2></a>
     </div>`
     document.getElementById("modals_hidden").innerHTML += add;
 }

@@ -25,13 +25,17 @@ a:hover{
 
 p, 
 .title{
-  padding:20px;
+  padding: 10px 20px;
   margin:0
 }
 
 h3{
   padding:3px;
   margin:0;
+}
+
+ul{
+  margin:0 0 20px 0
 }
 
 #div_header{
@@ -68,12 +72,12 @@ title{
 
 .text{
   background-color: #222222;
+  padding:1%
 }
 
 #articles_container{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
-
 }
 
 article{
@@ -112,7 +116,8 @@ article img, article iframe{
   text-align: center;
 }
 .modal img{
-  height:80%;
+  max-height:80%;
+  max-width:80%;
   padding: 40px;
   background-color:#333;
 }
@@ -134,4 +139,9 @@ img:hover{
     display:grid;
     grid-template-columns: 0% 0% 100% 0%;
   }
+  
+#articles_container{
+  display:grid;
+  grid-template-columns: 1fr;
+}
 }
